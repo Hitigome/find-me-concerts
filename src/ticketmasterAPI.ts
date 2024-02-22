@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-interface Event {
+interface ConcertEvent {
     id: string;
     name: string;
 }
@@ -14,7 +14,7 @@ interface TicketmasterResponse {
 const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/';
 const API_KEY = 'oS3yLuWAgP3jZVa221ofxKaGL9xWLT5j';
 
-export async function getEvent(city: string): Promise<Event[]> {
+export async function getEvent(city: string): Promise<ConcertEvent[]> {
     try {
         const response = await axios.get<TicketmasterResponse>(`${BASE_URL}/events.json`, {
             params: {
